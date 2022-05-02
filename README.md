@@ -1,25 +1,27 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # review_books
+
+## サイトの概要
+### サイトテーマ
+
+本の好きな人が本のレビューやコメントや評価などを行い、評価が高い順でランキングの行われていてジャンル検索もあるサイト
+
+### テーマを選んだ理由
+現在の自分の実力で何が作れるかを考えた時にbookersの延長線上のものかと思い、それに加えて本を読むのが好きなのでそのレビューをするサイトにしようと決めました。
+
+### ターゲーットユーザー
+
+本の好きな人
+### 主な利用シーン
+本の好きな人が本に対してレビューや評価、コメントなどを書き、その中でもっとも評価が高い順にランキングする
+ジャンル検索もできる
+## 設計書
+
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
