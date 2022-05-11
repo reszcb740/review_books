@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    root to: "homes#top"
+    resources :books, only: [:index, :show]
+  end
+
   namespace :public do
     resources :books
+    root to: "homes#top"
+    get 'homes/about'
   end
   #管理者用
   #URL/admin/sign_in...
