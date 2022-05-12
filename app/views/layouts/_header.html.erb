@@ -1,0 +1,42 @@
+<header>
+  <nav>
+    <div>
+      <button>
+        <span></span>
+      </button>
+      <a></a>
+      <div>
+        <ul>
+          <% if admin_signed_in? %>
+            <li>
+              <%= link_to(destroy_admin_session_path, method: :delete, class: "btn btn-sm btn-outline-secondary") do %>
+               ログアウト
+              <% end %>
+            </li>
+          <% elsif customer_signed_in? %>
+            <li></li>
+            <li>
+              <%= link_to(destroy_customer_session_path, method: :delete, class: "btn btn-sm outline-secondary") do %>
+               ログアウト
+              <% end %>
+            </li>
+          <% else %>
+           <li>
+
+           </li>
+           <li>
+             <%= link_to(new_customer_registration_path, class: "btn btn-sm outline-secondary") do %>
+              新規登録
+             <% end %>
+           </li>
+           <li>
+             <%= link_to(customer_session_path, class: "btn btn-sm outline-secondary") do %>
+              ログイン
+             <% end %>
+           </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
