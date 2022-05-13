@@ -1,0 +1,17 @@
+<div>
+  <h2>会員情報</h2>
+  <%= image_tag customer.get_profile_image(63, 63), class: "attachment customer profile_image fallback" %>
+   <table>
+     <tbody>
+       <tr></tr>
+       <tr>
+         <th>名前</th>
+         <th><%= customer.name %></th>
+       </tr>
+       <tr>
+         <th>自己紹介</th>
+         <th><%= customer.introduction %></th>
+       </tr>
+     </tbody>
+   </table>
+</div>
