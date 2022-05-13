@@ -1,0 +1,32 @@
+<div>
+  <h1>ジャンル一覧・追加</h1>
+  <div>
+    <div>
+      <%= form_with model: @genre, url: public_genres_path, method: :post do |f| %>
+       <div class="form-group">
+         <label for="genre_name">ジャンル名</label>
+         <%= f.text_field :name, autofocus: true, id: "genre_name", placeholder: "ジャンル名", class: 'form-control name' %>
+       </div>
+       <div class="form-group">
+         <%= f.submit "新規登録", class: 'btn btn-success' %>
+       </div>
+      <% end %>
+      <% @genres.each do |genre| %>
+       <table>
+         <thead>
+           <tr>ジャンル</tr>
+           <tr colspan="2"></tr>
+         </thead>
+         <tbody>
+           <td>
+             <%= genre.name %>
+           </td>
+           <td>
+             <%= link_to "編集する", edit_public_genre_path(genre.id), class: 'btn btn-success' %>
+           </td>
+         </tbody>
+       </table>
+      <% end %>
+    </div>
+  </div>
+</div>

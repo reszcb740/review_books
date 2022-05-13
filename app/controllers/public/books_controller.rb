@@ -1,6 +1,7 @@
 class Public::BooksController < ApplicationController
   def new
     @book = Book.new
+    @genres = Genre.all
   end
   def create
    @book = Book.new(book.params)
@@ -15,6 +16,7 @@ class Public::BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(book_params)
   end
 
   def edit
@@ -23,6 +25,6 @@ class Public::BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :genre_id)
   end
 end

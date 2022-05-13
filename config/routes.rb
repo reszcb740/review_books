@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+
   namespace :admin do
     root to: "homes#top"
     resources :books, only: [:index, :show]
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :update]
     get 'customers/unsubscribe'
     patch 'customers/withdraw'
-
+    resources :genres, only: [:create, :index, :edit, :update]
   end
   #管理者用
   #URL/admin/sign_in...
