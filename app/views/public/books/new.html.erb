@@ -1,2 +1,14 @@
-<h1>Public::Books#new</h1>
-<p>Find me in app/views/public/books/new.html.erb</p>
+<h1>本の新規投稿登録</h1>
+<%= form_with model: @book, url: 'public/books', method: :post do %>
+ <div class="form-group">
+   <label for="book_title">タイトル</label>
+   　<%= f.text_field :title, class: "form-control book_title" %>
+ </div>
+ <div class="form-group">
+   <label for="book_body">本の内容</label>
+   <%= f.text_area :body, class: "form-control book_body" %>
+ </div>
+ <div class="form-group">
+   <%= f.submit '本の新規投稿登録', class: "btn btn-sm btn-success" %>
+ </div>
+<% end %>
