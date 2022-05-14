@@ -1,2 +1,28 @@
-<h1>Public::Books#edit</h1>
-<p>Find me in app/views/public/books/edit.html.erb</p>
+<div>
+  <div>
+    <div>
+      <h1>お勧めする本の編集</h1>
+      <%= form_with model: public_book_path(@book.id) do |f| %>
+       <div class="form-group">
+         <label for="book_title">タイトル</label>
+         <%= f.text_field :title, class: "form-control book_title" %>
+       </div>
+       <div class="form-group">
+         <label for="book_body">本の詳細</label>
+         <%= f.text_area :body, class: "form-control book_body" %>
+       </div>
+       <div class="form-group">
+         <label for="book_genre">ジャンル</label>
+         <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
+       </div>
+       <div class="form-group">
+         <%= f.submit '変更を保存する', class: "btn btn-success" %>
+       </div>
+      <% end %>
+
+      <%= link_to "詳細", public_book_path(@book.id), class: "book" %>
+       |
+      <%= link_to "戻る", public_books_path, class: "back" %>
+    </div>
+  </div>
+</div>

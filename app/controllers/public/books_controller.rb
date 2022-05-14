@@ -4,7 +4,7 @@ class Public::BooksController < ApplicationController
     @genres = Genre.all
   end
   def create
-   @book = Book.new(book.params)
+   @book = Book.new(book_params)
    @book.customer_id = current_customer.id
    @book.save
    redirect_to public_books_path
@@ -16,15 +16,29 @@ class Public::BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(book_params)
+    @book = Book.find(params[:id])
   end
 
   def edit
+    @book = Book.find(params[:id])
+    @book.customer = current_customer
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    redirect_to public_books_path
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to public_books_path
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:title, :body, :genre_id)
+    params.require(:book).permit(:title, :body, :genre_id, :customer_id)
   end
 end

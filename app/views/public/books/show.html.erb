@@ -1,2 +1,21 @@
-<h1>Public::Books#show</h1>
-<p>Find me in app/views/public/books/show.html.erb</p>
+<div>
+  <div>
+    <%= render 'public/books/index', book: @book, customer: @customer %>
+    <div>
+      <h2>お勧めする本の詳細</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td><%= image_tag @customer.get_profile_image(40, 40) %><br><%= link_to @customer.name, public_customer_path(@customer.id) %></td>
+            <td><%= link_to @book.title, public_book_path(@book.id) %></td>
+            <td><%= @book.body %></td>
+            <% if @book.customer == current_customer %>
+              <td><%= link_to "編集する", edit_public_book_path(@book.id), class: "btn btn-sm btn-success edit_public_book" %></td>
+              <td><%= link_to "削除する", public_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger public_destroy_book" %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
