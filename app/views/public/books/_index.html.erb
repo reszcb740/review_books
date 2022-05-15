@@ -1,6 +1,6 @@
 <div>
   <h2>会員情報</h2>
-  <%= image_tag customer.get_profile_image(63, 63), class: "attachment customer.get_profile_image fallback" %>
+  <%= image_tag customer.get_profile_image(63, 63), class: "attachment customer profile_image fallback" %>
    <table>
      <tbody>
        <tr></tr>
@@ -14,4 +14,7 @@
        </tr>
      </tbody>
    </table>
+   <div class="row">
+     <%= link_to edit_public_customer_path(customer.id), class: "btn btn-outline-secondary btn-block" %>
+   </div>
 </div>

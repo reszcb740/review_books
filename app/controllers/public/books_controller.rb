@@ -17,6 +17,8 @@ class Public::BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @customer = @book.customer
+    @book_new = Book.new
   end
 
   def edit

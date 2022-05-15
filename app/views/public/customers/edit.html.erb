@@ -2,7 +2,7 @@
   <div>
     <div>
       <h2>会員情報編集</h2>
-      <%= form_with model: public_customer_path(@customer.id) do |f| %>
+      <%= form_with model: @customer, url: public_customer_path(@customer.id) do |f| %>
        <div class="form-group">
          <label for="cutomer_name">名前</label>
          <%= f.text_field :name, autofocus: true, id: "customer_name", placeholder: "名前", class: "form-control name" %>
