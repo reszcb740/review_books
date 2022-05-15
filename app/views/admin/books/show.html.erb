@@ -1,2 +1,21 @@
-<h1>Admin::Books#show</h1>
-<p>Find me in app/views/admin/books/show.html.erb</p>
+<div>
+  <h2>本の投稿詳細</h2>
+  <div>
+    <div>
+      <div class="form-group">
+        <%= @book.tile %>
+      </div>
+      <div class="form-group">
+        <%= @book.body %>
+      </div>
+      <div class="form-group">
+        <%= @book.genre.name %>
+      </div>
+      <div></div>
+      <div></div>
+      <div class="form-group">
+        <%= link_to "戻る", admin_books_path, class: "btn btn-sm btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>

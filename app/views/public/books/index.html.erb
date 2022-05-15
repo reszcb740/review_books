@@ -12,6 +12,9 @@
            </tr>
          </thead>
          <tbody>
+           <div>
+             <%= link_to "新規登録", new_public_book_path, class: "btn btn-sm btn-primary" %>
+           </div>
            <% @books.each do |book| %>
             <tr>
               <td>
