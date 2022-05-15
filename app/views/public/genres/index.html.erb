@@ -11,12 +11,12 @@
          <%= f.submit "新規登録", class: 'btn btn-success' %>
        </div>
       <% end %>
-      <% @genres.each do |genre| %>
        <table>
          <thead>
            <tr>ジャンル</tr>
            <tr colspan="2"></tr>
          </thead>
+      <% @genres.each do |genre| %>
          <tbody>
            <td>
              <%= genre.name %>
