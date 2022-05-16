@@ -17,12 +17,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "homes#top"
-    resources :books, only: [:index, :show]
+    resources :books, only: [:index, :show] do
+      resources :book_comments, only: [:create, :destroy]
+    end
     resources :customers, only: [:index, :show, :edit, :update]
   end
 
   namespace :public do
-    resources :books
+    resources :books do
+      resources :book_comments, only: [:create, :destroy]
+    end
     root to: "homes#top"
     get 'homes/about'
     resources :customers, only: [:show, :edit, :update]
