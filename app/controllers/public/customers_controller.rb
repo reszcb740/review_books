@@ -2,7 +2,6 @@ class Public::CustomersController < ApplicationController
   def show
     @customer = current_customer
     @books = @customer.books
-    @book = Book.new
   end
 
   def edit

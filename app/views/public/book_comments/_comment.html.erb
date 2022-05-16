@@ -3,7 +3,7 @@
    <tr>
      <td>
        <%= image_tag book_comment.customer.get_profile_image(40, 40), format: 'jpeg', fallback: "no_image.jpg" %>
-       <%= link_to public_customer_path(book.customer.id) do %>
+       <%= link_to customer_path(book.customer.id) do %>
         <%= book_comment.customer.name %>
        <% end %>
      </td>
@@ -16,7 +16,7 @@
 </table>
 <div class="form-group">
   <label for="newcomment">Comment</label>
-  <%= form_with(model:[book, book_comment], local: false) do |f| %>
+  <%= form_with(model:[book, book_comment], local: false, url: public_book_book_comments_path(book.id)) do |f| %>
    <%= f.text_area :comment, row: '5', placeholder: "コメントをここに", class: "form-control" %>
    <%= f.submit "送信", class: "btn btn-sm btn-success" %>
   <% end %>
