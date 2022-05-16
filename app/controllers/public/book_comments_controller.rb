@@ -1,7 +1,7 @@
 class Public::BookCommentsController < ApplicationController
 
   def create
-   @book = Book.find(pramas[:book_id])
+   @book = Book.find(params[:book_id])
    comment = current_customer.book_comments.new(book_comment_params)
    comment.book_id = @book.id
    comment.save

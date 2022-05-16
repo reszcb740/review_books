@@ -1,5 +1,5 @@
 class BookComment < ApplicationRecord
 
-  belongs_to :books
+  belongs_to :book
   belongs_to :customer
 end
