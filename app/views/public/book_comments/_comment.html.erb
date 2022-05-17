@@ -18,6 +18,6 @@
   <label for="newcomment">Comment</label>
   <%= form_with(model:[book, book_comment], local: false, url: public_book_book_comments_path(book.id)) do |f| %>
    <%= f.text_area :comment, row: '5', placeholder: "コメントをここに", class: "form-control" %>
-   <%= f.submit "送信", class: "btn btn-sm btn-success" %>
+   <%= f.submit "送信" %>
   <% end %>
 </div>
