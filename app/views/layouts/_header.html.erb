@@ -1,62 +1,60 @@
 <header>
-  <nav>
-    <div>
-      <button>
-        <span></span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <a></a>
-      <div>
-        <ul>
+      <a class="navbar-brand" href="/"><span>Review_Books</span></a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
           <% if admin_signed_in? %>
-            <li>
-              <li>
+              <li class = "nav-item mr-3">
                 <%= link_to(admin_customers_path, class: "btn btn-sm btn-outline-secondary") do %>
                  会員一覧
                 <% end %>
               </li>
-              <li>
+              <li class = "nav-item mr-3">
                 <%= link_to(admin_books_path, class: "btn btn-sm btn-outline-secondary") do %>
                  本　投稿一覧
                 <% end %>
-              </li>
+              </li class = "nav-item mr-3">
               <%= link_to(destroy_admin_session_path, method: :delete, class: "btn btn-sm btn-outline-secondary") do %>
                ログアウト
               <% end %>
-            </li>
           <% elsif customer_signed_in? %>
-            <li></li>
-            <li>
+            <li class="mx-auto"></li>
+            <li class = "nav-item mr-3">
               <%= link_to(public_customer_path(current_customer.id), class: "btn btn-sm outline-secondary") do %>
               　マイページ
               <% end %>
             </li>
-            <li>
+            <li class = "nav-item mr-3">
               <%= link_to(public_books_path, class: "btn btn-sm outline-secondary") do %>
                本 投稿一覧
               <% end %>
             </li>
-            <li>
+            <li class = "nav-item mr-3">
               <%= link_to(destroy_customer_session_path, method: :delete, class: "btn btn-sm outline-secondary") do %>
                ログアウト
               <% end %>
             </li>
           <% else %>
-          <li>
+          <li class = "nav-item mr-3">
             <%= link_to(public_root_path, class: "btn btn-sm btn-outline-secondary") do %>
              Home
             <% end %>
           </li>
-           <li>
+           <li class = "nav-item mr-3">
              <%= link_to(public_homes_about_path, class: "btn btn-sm btn-outline-secondary") do %>
               About
             <% end %>
            </li>
-           <li>
+           <li class = "nav-item mr-3">
              <%= link_to(new_customer_registration_path, class: "btn btn-sm outline-secondary") do %>
               新規登録
              <% end %>
            </li>
-           <li>
+           <li class = "nav-item mr-3">
              <%= link_to(customer_session_path, class: "btn btn-sm outline-secondary") do %>
               ログイン
              <% end %>

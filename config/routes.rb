@@ -24,11 +24,11 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
+    root to: "homes#top"
+    get 'homes/about'
     resources :books do
       resources :book_comments, only: [:create, :destroy]
     end
-    root to: "homes#top"
-    get 'homes/about'
     resources :customers, only: [:show, :edit, :update]
     get 'customers/unsubscribe'
     patch 'customers/withdraw'

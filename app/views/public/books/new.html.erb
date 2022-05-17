@@ -1,7 +1,7 @@
-<div>
- <div>
+<div class="container px-5 px-sm-0">
+ <div class="row">
   <div>
-   <h1>本の新規投稿登録</h1>
+   <h1 class="mt-3">本の新規投稿登録</h1>
    <%= form_with model: @book, url: public_books_path(@book.id), method: :post do |f| %>
     <div class="form-group">
       <label for="book_title">タイトル</label>

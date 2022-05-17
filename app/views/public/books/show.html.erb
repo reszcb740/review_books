@@ -1,9 +1,9 @@
-<div>
-  <div>
+<div class="container">
+  <div class="row">
     <%= render 'public/books/index', book: @book, customer: @customer %>
-    <div>
+    <div class="col-md-8 offset-md-1">
       <h2>お勧めする本の詳細</h2>
-      <table>
+      <table class="table">
         <tbody>
           <tr>
             <td><%= image_tag @customer.get_profile_image(40, 40) %><br><%= link_to @customer.name, public_customer_path(@customer.id) %></td>
