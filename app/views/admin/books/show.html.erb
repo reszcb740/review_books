@@ -1,7 +1,7 @@
-<div>
+<div class="container">
   <h2>本の投稿詳細</h2>
-  <div>
-    <div>
+  <div class="row">
+    <div class="col">
       <div class="form-group">
         <%= @book.title %>
       </div>
@@ -11,8 +11,26 @@
       <div class="form-group">
         <%= @book.genre.name %>
       </div>
-      <div></div>
-      <div></div>
+      <div class="form-group">
+        コメント数: <%= @book.book_comments.count %>
+      </div>
+      <div class="comments-area">
+        <%= render 'admin/book_comments/comment', book: @book, book_comment: @book_comment %>
+      </div>
+      <div id="star-rate<%= @book.id %>"></div>
+      <script>
+        $('#star-rate<%= @book.id%>').raty({
+          size      : 36,
+          starOff   : '<%= asset_path('star-off.png') %>',
+          starOn    : '<%= asset_path('star-on.png') %>',
+          half      : true,
+          readOnly: true,
+          score: <%= @book.star %>,
+        });
+      </script>
+      <div class="form-group">
+        <%= link_to "編集する", edit_admin_book_path(@book.id), class: "btn btn-sm btn-success" %>
+      </div>
       <div class="form-group">
         <%= link_to "戻る", admin_books_path, class: "btn btn-sm btn-success" %>
       </div>

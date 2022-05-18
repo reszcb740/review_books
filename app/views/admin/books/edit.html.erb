@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1>お勧めする本の編集</h1>
-      <%= form_with model: @book, url: public_book_path(@book.id) do |f| %>
+      <%= form_with model: @book, url: admin_book_path(@book.id) do |f| %>
        <div class="form-group">
          <label for="book_title">タイトル</label>
          <%= f.text_field :title, class: "form-control book_title" %>
@@ -33,9 +33,9 @@
        </div>
       <% end %>
 
-      <%= link_to "詳細", public_book_path(@book.id), class: "book" %>
+      <%= link_to "詳細", admin_book_path(@book.id), class: "book" %>
        |
-      <%= link_to "戻る", public_books_path, class: "back" %>
+      <%= link_to "戻る", admin_books_path, class: "back" %>
     </div>
   </div>
 </div>
