@@ -13,13 +13,14 @@
       </div>
       <div class="form-group">
         コメント数: <%= @book.book_comments.count %>
-      </div>
       <div class="comments-area">
         <%= render 'admin/book_comments/comment', book: @book, book_comment: @book_comment %>
       </div>
+      </div>
+      <div>評価: <%= @book.star %></div>
       <div id="star-rate<%= @book.id %>"></div>
       <script>
-        $('#star-rate<%= @book.id%>').raty({
+        $('#star-rate<%= @book.id %>').raty({
           size      : 36,
           starOff   : '<%= asset_path('star-off.png') %>',
           starOn    : '<%= asset_path('star-on.png') %>',
