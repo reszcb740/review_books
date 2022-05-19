@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
   end
 
-  namespace :public do
+  scope module: :public do
     root to: "homes#top"
     get 'homes/about'
     resources :books do

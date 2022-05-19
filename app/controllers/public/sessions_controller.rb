@@ -26,7 +26,7 @@ class Public::SessionsController < Devise::SessionsController
   # end
   before_action :configure_permitted_parameters, if: :devise_controller?
   def after_sign_in_path_for(resouce)
-    public_customer_path(current_customer.id)
+    customer_path(current_customer.id)
   end
 
   protected

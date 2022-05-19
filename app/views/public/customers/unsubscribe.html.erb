@@ -7,8 +7,8 @@
         <p class="text-center">これまでの本投稿一覧が閲覧できなくなります。</p>
         <p class="text-center">退会する場合は、「退会する」をクリックしてください。</p>
         <div class="d-flex align-items-center justify-content-center" style="height:200px;" >
-          <%= link_to "退会しない", publuc_customers_path, class:"btn btn-primary" %>
-          <%= link_to "退会する", public_customers_withdraw_path, method: :patch, class:"btn btn-danger ml-3" %>
+          <%= link_to "退会しない", customers_path, class:"btn btn-primary" %>
+          <%= link_to "退会する", customers_withdraw_path, method: :patch, class:"btn btn-danger ml-3" %>
         </div>
       </div>
     </div>
