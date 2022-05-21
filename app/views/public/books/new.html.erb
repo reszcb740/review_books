@@ -16,8 +16,8 @@
      <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
     </div>
     <div class="row" id="star">
-     <%= f.label :rate, '評価', class: "form-control label" %>
-     <%= f.hidden_field :rate, id: :review_star %>
+     <%= f.label :star, '評価', class: "form-control label" %>
+     <%= f.hidden_field :star, id: :review_star %>
     </div>
     <script>
      $('#star').empty();
@@ -27,7 +27,7 @@
       starOn: '<%= asset_path('star-on.png') %>',
       starHalf: '<%= asset_path('star-half.png') %>',
       half: true,
-      scoreName: 'book[rate]',
+      scoreName: 'book[star]',
      });
     </script>
     <div class="form-group">
