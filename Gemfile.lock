@@ -244,7 +244,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.3)
   mysql2
-  puma (~> 3)
+  puma (~> 3.11)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.5)
   sass-rails (>= 6)
