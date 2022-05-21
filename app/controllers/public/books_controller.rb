@@ -7,7 +7,7 @@ class Public::BooksController < ApplicationController
    @book = Book.new(book_params)
    @book.customer_id = current_customer.id
    @book.save
-   redirect_to public_books_path
+   redirect_to books_path
   end
 
   def index
@@ -29,13 +29,13 @@ class Public::BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     @book.update(book_params)
-    redirect_to public_books_path
+    redirect_to books_path
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to public_books_path
+    redirect_to books_path
   end
 
   private
