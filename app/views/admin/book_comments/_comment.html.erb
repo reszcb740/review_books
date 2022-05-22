@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <% book.book_comments.each do |book_comment| %>
    <tr>
      <td>
@@ -15,7 +15,7 @@
   <% end %>
 </table>
 
-<div class="form-group">
+<div class="form-group mt-3">
   <label for="newcomment">Comment</label>
   <%= form_with(model:[book, book_comment], local: false, url: admin_book_book_comments_path(book.id)) do |f| %>
    <%= f.text_area :comment, row: '5', placeholder: "コメントをここに", class: "form-control" %>
