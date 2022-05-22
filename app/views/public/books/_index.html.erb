@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col-md-3 my-3">
   <h2>会員情報</h2>
   <%= image_tag customer.get_profile_image(63, 63), class: "attachment customer profile_image fallback" %>
    <table class="table">
@@ -14,7 +14,7 @@
        </tr>
      </tbody>
    </table>
-   <div class="row">
+   <div class="row mt-3">
      <%= link_to edit_customer_path(customer.id), class: "btn btn-outline-secondary btn-block" do %>
       <i class="fas fa-user-cog"></i>
      <% end %>
