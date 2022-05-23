@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get 'homes/about'
     resources :books do
       resources :book_comments, only: [:create, :destroy]
+      get :search, on: :collection
     end
     resources :customers, only: [:show, :edit, :update]
     get 'customers/unsubscribe'

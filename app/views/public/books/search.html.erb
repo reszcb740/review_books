@@ -1,0 +1,8 @@
+<h2>ジャンル検索</h2>
+<div>
+<% @search_genres.each do |search| %>
+ <%= search.genre.name %>
+ <%= search.title %>
+<% end %>
+  genres search for '<%= params[:word] %>
+</div>

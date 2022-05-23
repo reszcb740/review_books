@@ -13,6 +13,7 @@ class Public::BooksController < ApplicationController
   def index
     @books = Book.all
     @customer = current_customer
+    @book_book_comment_ranks = Book.where(id: BookComment.group(:book_id).order('count(book_id) desc').pluck(:book_id)).limit(3)
   end
 
   def show
@@ -36,6 +37,11 @@ class Public::BooksController < ApplicationController
     book = Book.find(params[:id])
     book.destroy
     redirect_to books_path
+  end
+
+  def search
+    searched_genre_ids = Genre.looks(params[:search], params[:word]).pluck(:id)
+    @search_genres = Book.where(genre_id: searched_genre_ids)
   end
 
   private

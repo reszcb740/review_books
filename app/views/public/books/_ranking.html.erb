@@ -1,0 +1,6 @@
+<h2>本の投稿コメントランキング</h2>
+<% book_ranks.each.with_index(1) do |book, i| %>
+ 第<%= i %>位
+ <%= book.title %>
+ <%= book.book_comments.count %>数
+<% end %>
