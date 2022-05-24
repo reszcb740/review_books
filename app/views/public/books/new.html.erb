@@ -3,6 +3,7 @@
   <div class="px-5">
    <h1 class="mt-5">本の新規投稿登録</h1>
    <%= form_with model: @book, url: books_path(@book.id), method: :post do |f| %>
+   <%= render 'public/books/errors', book: @book %>
     <div class="form-group mt-3">
       <label for="book_title">タイトル</label>
       　<%= f.text_field :title, class: "form-control book_title" %>

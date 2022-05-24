@@ -5,7 +5,7 @@ class Public::GenresController < ApplicationController
     if @genre.save
      redirect_to genres_path, notice: "You have created Genre successfully."
     else
-      @genres = Gnenre.all
+      @genres = Genre.all
       render :index
     end
   end

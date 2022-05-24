@@ -3,7 +3,7 @@
   <div class="row px-5">
     <div class="mt-5">
       <%= form_with model: @genre, url: genres_path, method: :post do |f| %>
-      <%= render 'public/layouts/errors', obj: @genre %>
+      <%= render 'public/genres/errors', genre: @genre %>
        <div class="form-group mt-3">
          <label for="genre_name">ジャンル名</label>
          <%= f.text_field :name, autofocus: true, id: "genre_name", placeholder: "ジャンル名", class: 'form-control name' %>
