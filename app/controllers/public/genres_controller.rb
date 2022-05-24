@@ -1,8 +1,13 @@
 class Public::GenresController < ApplicationController
+  before_action :authenticate_customer!, only: [:edit, :update]
   def create
     @genre = Genre.new(genre_params)
-    @genre.save
-    redirect_to genres_path
+    if @genre.save
+     redirect_to genres_path, notice: "You have created Genre successfully."
+    else
+      @genres = Gnenre.all
+      render :index
+    end
   end
 
   def index
@@ -16,8 +21,11 @@ class Public::GenresController < ApplicationController
 
   def update
    @genre = Genre.find(params[:id])
-   @genre.update(genre_params)
-   redirect_to genres_path
+   if @genre.update(genre_params)
+    redirect_to genres_path, notice: "You have updated Genre successfully."
+   else
+     render :edit
+   end
   end
 
   private

@@ -1,6 +1,7 @@
 class Genre < ApplicationRecord
   has_many :books, dependent: :destroy
 
+  validates :name, presence: true
  def self.looks(search, word)
     if search == "perfect_match"
       where(name: word)
