@@ -1,5 +1,5 @@
 class Admin::BookCommentsController < ApplicationController
-
+ before_action :set_book_cooment, only: [:create, :destroy]
   def create
    @book = Book.find(pramas[:book_id])
    comment = current_customer.book_comments.new(book_comment_params)
@@ -19,5 +19,13 @@ class Admin::BookCommentsController < ApplicationController
 
   def book_comment_params
     params.require(:book_comment).permit(:comment, :book_id)
+  end
+
+  def if not_admin
+    redirect_to admin_book_book_comment_path(book, book_comment) unless current_customer.admin?
+  end
+
+  def set_book_comment
+    @book_comment = BookComment.find(params[:id])
   end
 end

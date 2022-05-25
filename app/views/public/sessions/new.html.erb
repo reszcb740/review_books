@@ -31,9 +31,15 @@
         <% end %>
      </div>
 
-      <div class="row">
-        <div class="offset-4 mx-auto mt-5">
+      <div>
+        <div class="mr-5">
           <%= render "public/shared/links" %>
+        </div>
+      </div>
+      <div>
+        <div class="mr-5">
+          <p>管理者方はこちらから</p>
+          <%= link_to "管理者ログイン", new_admin_session_path, class: "btn btn-sm btn-primary" %>
         </div>
       </div>
  </div>
