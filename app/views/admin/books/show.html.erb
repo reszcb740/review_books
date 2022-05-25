@@ -20,7 +20,7 @@
       <div>評価: <%= @book.star %>点</div>
       <div id="star-rate<%= @book.id %>"></div>
       <script>
-        $('#star').empty();
+        $('#star-rate<%= @book.id %>').empty();
         $('#star-rate<%= @book.id %>').raty({
           size: 36,
           starOff: '<%= asset_path('star-off.png') %>',
