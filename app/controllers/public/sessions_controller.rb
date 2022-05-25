@@ -47,4 +47,6 @@ class Public::SessionsController < Devise::SessionsController
       ## [処理内容3]
     end
   end
+
+
 end

@@ -19,4 +19,11 @@
       <i class="fas fa-user-cog"></i>
      <% end %>
    </div>
+   <% if customer.name != "guestcustomer" %>
+    <div class='row'>
+      <%= link_to edit_customer_path(customer),class: "btn btn-outline-secondary btn-block edit_customer_#{customer.id}" do %>
+       <i class="fas fa-user-cog"></i>
+      <% end %>
+    </div>
+   <% end %>
 </div>
