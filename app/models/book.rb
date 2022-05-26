@@ -11,7 +11,7 @@ class Book < ApplicationRecord
   validates :genre_id, presence: true
   validates :star, numericality: {
     less_than_or_equal_to: 5,
-    greater_than_or_equal_to: 1}, presence: true
+    greater_than_or_equal_to: 0}, presence: true
 
     def get_profile_image(width, height)
         unless profile_image.attached?

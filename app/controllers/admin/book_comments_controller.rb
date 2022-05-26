@@ -1,5 +1,5 @@
 class Admin::BookCommentsController < ApplicationController
- before_action :set_book_cooment, only: [:create, :destroy]
+ before_action :set_book_comment, only: [:create, :destroy]
   def create
    @book = Book.find(pramas[:book_id])
    comment = current_customer.book_comments.new(book_comment_params)

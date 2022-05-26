@@ -31,9 +31,9 @@ Rails.application.routes.draw do
       resources :book_comments, only: [:create, :destroy]
       get :search, on: :collection
     end
+    get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
+    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
     resources :customers, only: [:show, :edit, :update]
-    get 'customers/unsubscribe'
-    patch 'customers/withdraw'
     resources :genres, only: [:create, :index, :edit, :update]
   end
 
