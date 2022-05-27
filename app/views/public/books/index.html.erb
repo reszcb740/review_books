@@ -1,5 +1,7 @@
 <div class="container px-5 px-sm-0 my-5">
+  <div class="text-md-center">
     <%= render 'public/genres/search' %>
+  </div>
   <div class="row mt-3">
     <%= render 'public/books/index', book: @book, customer: @customer %>
      <div class="col-md-8 offset-md-1">
@@ -14,7 +16,7 @@
          </thead>
          <tbody>
             <%= render 'public/books/ranking', book_ranks: @book_book_comment_ranks %>
-           <div class="offset-1 mt-6">
+           <div class="offset-1 text-md-right">
              <%= link_to new_book_path, class: "btn btn-sm btn-primary" do %>
               <i class="fas fa-plus-circle"></i>
               新規登録
