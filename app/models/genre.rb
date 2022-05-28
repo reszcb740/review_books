@@ -2,17 +2,17 @@ class Genre < ApplicationRecord
   has_many :books, dependent: :destroy
 
   validates :name, presence: true
- def self.looks(search, word)
-    if search == "perfect_match"
+  def self.looks(search, word)
+    if search == 'perfect_match'
       where(name: word)
-    elsif search == "forward_match"
-     where("name LIKE?", "#{word}%")
-    elsif search == "backward_match"
-     where("name LIKE?", "%#{word}")
-    elsif search == "pertial_match"
-     where("name LIKE?", "%#{word}%")
+    elsif search == 'forward_match'
+      where('name LIKE?', "#{word}%")
+    elsif search == 'backward_match'
+      where('name LIKE?', "%#{word}")
+    elsif search == 'pertial_match'
+      where('name LIKE?', "%#{word}%")
     else
-     all
+      all
     end
- end
+  end
 end

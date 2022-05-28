@@ -25,7 +25,7 @@ class Admin::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   before_action :configure_permitted_parameters, if: :devise_controller?
-  def after_sign_in_path_for(resouce)
+  def after_sign_in_path_for(_resouce)
     admin_customers_path
   end
 

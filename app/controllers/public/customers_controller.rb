@@ -1,7 +1,7 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
-   before_action :ensure_correct_customer, only: [:edit, :update]
-   before_action :ensure_guest_customer, only: [:edit]
+  before_action :ensure_correct_customer, only: %i[edit update]
+  before_action :ensure_guest_customer, only: [:edit]
 
   def show
     @customer = current_customer
@@ -15,7 +15,7 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-     redirect_to customer_path(@customer.id), notice: "You have updated customer successfully."
+      redirect_to customer_path(@customer.id), notice: 'You have updated customer successfully.'
     else
       render :edit
     end
@@ -40,14 +40,13 @@ class Public::CustomersController < ApplicationController
 
   def ensure_correct_customer
     @customer = Customer.find(params[:id])
-    unless @customer == current_customer
-      redirect_to customer_path(current_customer)
-    end
+    redirect_to customer_path(current_customer) unless @customer == current_customer
   end
+
   def ensure_guest_customer
     @customer = Customer.find(params[:id])
     if @customer.name == "guestcustomer"
-      redirect_to customer_path(current_customer) , notice: 'ゲスト会員はプロフィール編集画面へ遷移できません。'
+      redirect_to customer_path(current_customer), notice: 'ゲスト会員はプロフィール編集画面へ遷移できません。'
     end
   end
 end

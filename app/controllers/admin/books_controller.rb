@@ -15,9 +15,7 @@ class Admin::BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if params[:book][:star] == ''
-      params[:book][:star] = 0
-    end
+    params[:book][:star] = 0 if params[:book][:star] == ''
     @book.update(book_params)
     redirect_to admin_books_path
   end

@@ -25,7 +25,7 @@ class Public::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   before_action :configure_permitted_parameters, if: :devise_controller?
-  def after_sign_in_path_for(resouce)
+  def after_sign_in_path_for(_resouce)
     customer_path(current_customer.id)
   end
 
@@ -40,13 +40,12 @@ class Public::SessionsController < Devise::SessionsController
     ## [処理内容1] 入力されたemailからアカウントを1件取得
     @customer = Customer.find_by(name: params[:customer][:name])
     ## アカウントを取得できなかった場合、このメソッドを終了する
-    return if !@customer
+    return unless @customer
+
     ## [処理内容2] 取得したアカウントをパスワードと入力されたパスワードが一致てるか判別
     if @customer.valid_password?(params[:customer][:password]) && @customer.is_deleted
       redirect_to new_customer_registration_path
       ## [処理内容3]
     end
   end
-
-
 end

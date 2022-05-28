@@ -1,40 +1,36 @@
 Rails.application.routes.draw do
-
-  #管理者用
-  #URL/admin/sign_in...
-  devise_for :admin,skip: [:registrations, :passwords], controllers: {
-    sessions: "admin/sessions"
+  # 管理者用
+  # URL/admin/sign_in...
+  devise_for :admin, skip: %i[registrations passwords], controllers: {
+    sessions: 'admin/sessions'
   }
 
-  #会員用
-  #URL/customers/sign_in...
-  devise_for :customers,skip: [:passwords], controllers: {
-    registrations: "public/registrations",
+  # 会員用
+  # URL/customers/sign_in...
+  devise_for :customers, skip: [:passwords], controllers: {
+    registrations: 'public/registrations',
     sessions: 'public/sessions'
   }
 
-
-
   namespace :admin do
-    root to: "homes#top"
-    resources :books, only: [:index, :show, :edit, :update, :destroy] do
-      resources :book_comments, only: [:create, :destroy]
-
+    root to: 'homes#top'
+    resources :books, only: %i[index show edit update destroy] do
+      resources :book_comments, only: %i[create destroy]
     end
-    resources :customers, only: [:index, :show, :edit, :update]
+    resources :customers, only: %i[index show edit update]
   end
 
   scope module: :public do
-    root to: "homes#top"
+    root to: 'homes#top'
     get 'homes/about'
     resources :books do
-      resources :book_comments, only: [:create, :destroy]
+      resources :book_comments, only: %i[create destroy]
       get :search, on: :collection
     end
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
-    resources :customers, only: [:show, :edit, :update]
-    resources :genres, only: [:create, :index, :edit, :update]
+    resources :customers, only: %i[show edit update]
+    resources :genres, only: %i[create index edit update]
   end
 
   devise_scope :customer do

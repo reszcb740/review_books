@@ -1,20 +1,21 @@
 class Public::BooksController < ApplicationController
   before_action :authenticate_customer!
-   before_action :ensure_correct_customer, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_customer, only: %i[edit update destroy]
   def new
     @book = Book.new
     @genres = Genre.all
   end
+
   def create
-   @book = Book.new(book_params)
-   @book.customer_id = current_customer.id
-   if @book.save
-    redirect_to books_path, notice: "You have created book successfully."
-   else
-     @books = Book.all
-     @customer = current_customer
-     render :new
-   end
+    @book = Book.new(book_params)
+    @book.customer_id = current_customer.id
+    if @book.save
+      redirect_to books_path, notice: 'You have created book successfully.'
+    else
+      @books = Book.all
+      @customer = current_customer
+      render :new
+    end
   end
 
   def index
@@ -31,7 +32,7 @@ class Public::BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    if @book.customer = current_customer
+    if @book.customer == current_customer
       render :edit
     else
       redirect_to books_path
@@ -41,7 +42,7 @@ class Public::BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-     redirect_to books_path, notice: "You have updated book successfully."
+      redirect_to books_path, notice: 'You have updated book successfully.'
     else
       render :edit
     end
@@ -66,8 +67,6 @@ class Public::BooksController < ApplicationController
 
   def ensure_correct_customer
     @book = Book.find(params[:id])
-    unless @book.customer == current_customer
-      redirect_to books_path
-    end
+    redirect_to books_path unless @book.customer == current_customer
   end
 end
