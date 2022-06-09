@@ -30,3 +30,4 @@
 - no_image,sample_author1などの画像
 - fontawesome
 - bootstrap
+- CopyRight Infratop.incをお借りしています
