@@ -11,7 +11,7 @@
            <tr>
              <th>タイトル</th>
              <th>本の詳細</th>
-             <th colspan="7"></th>
+             <th colspan="3"></th>
            </tr>
          </thead>
          <tbody>
@@ -45,6 +45,9 @@
                   score: <%= book.star %>,
                 });
               </script>
+              <td class="bookmark-btn_<%= book.id %>">
+               <%= render 'public/bookmarks/bookmark-btn', book: book %>
+              </td>
             </tr>
            <% end %>
          </tbody>

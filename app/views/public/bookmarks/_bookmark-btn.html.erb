@@ -1,0 +1,11 @@
+<% if book.bookmarked_by?(current_customer) %>
+   <%= link_to book_bookmarks_path(book.id), method: :delete, remote: true, class: "text-danger" do %>
+    <i class="fas fa-bookmark"></i>
+    ブックマークを外す
+   <% end %>
+<% else %>
+   <%= link_to book_bookmarks_path(book.id), method: :post, remote: true do %>
+    <i class="fas fa-bookmark"></i>
+    ブックマーク
+   <% end %>
+<% end %>

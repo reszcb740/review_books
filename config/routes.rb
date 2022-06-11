@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :books do
       resources :book_comments, only: %i[create destroy]
       get :search, on: :collection
+      resource :bookmarks, only: [:create, :destroy]
     end
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_09_014723) do
+ActiveRecord::Schema.define(version: 2022_06_10_055105) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 2022_06_09_014723) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_bookmarks_on_book_id"
+    t.index ["customer_id", "book_id"], name: "index_bookmarks_on_customer_id_and_book_id", unique: true
+    t.index ["customer_id"], name: "index_bookmarks_on_customer_id"
+  end
+
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.integer "customer_id"
@@ -95,4 +105,6 @@ ActiveRecord::Schema.define(version: 2022_06_09_014723) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookmarks", "books"
+  add_foreign_key "bookmarks", "customers"
 end

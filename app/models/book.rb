@@ -4,6 +4,7 @@ class Book < ApplicationRecord
   belongs_to :genre
 
   has_many :book_comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   validates :title, presence: true
   validates :body, presence: true, length: { maximum: 200 }
@@ -20,5 +21,9 @@ class Book < ApplicationRecord
       profile_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
     profile_image.variant(resize_to_limit: [width, height]).processed
+  end
+
+  def bookmarked_by?(customer)
+    bookmarks.where(customer_id: customer).exists?
   end
 end
