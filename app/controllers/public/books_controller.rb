@@ -22,6 +22,7 @@ class Public::BooksController < ApplicationController
     @books = Book.all
     @customer = current_customer
     @book_book_comment_ranks = Book.where(id: BookComment.group(:book_id).order('count(book_id) desc').pluck(:book_id)).limit(3)
+    @books = Book.order(star: :desc)
   end
 
   def show
