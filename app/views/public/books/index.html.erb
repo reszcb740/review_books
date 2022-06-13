@@ -2,7 +2,7 @@
   <div class="text-md-center">
     <%= render 'public/genres/search' %>
   </div>
-  <div class="row mt-3">
+  <div class="row">
     <%= render 'public/books/index', book: @book, customer: @customer %>
      <div class="col-md-8 offset-md-1 list-group-horizontal-md">
        <h2>お勧めの本</h2>
@@ -31,12 +31,11 @@
               <td class="books-body"><%= book.body %></td>
               <td class="books-genre"><%= book.genre.name %></td>
               <td class="books-comment">コメント数: <%= book.book_comments.count %></td>
-              <td>評価: <%= book.star %>点</td>
               <td id="star-rate-<%= book.id %>"></td>
               <script>
                 $('#star-rate-<%= book.id %>').empty();
                 $('#star-rate-<%= book.id %>').raty({
-                  size: 36,
+                  size: 24,
                   starOff: '<%= asset_path('star-off.png') %>',
                   starOn: '<%= asset_path('star-on.png') %>',
                   starHalf: '<%= asset_path('star-half.png') %>',

@@ -1,5 +1,5 @@
 <div class="container px-5 my-5">
-  <div class="row mt-3">
+  <div class="row">
     <%= render 'public/books/index', book: @book, customer: @customer %>
     <div class="col-md-8 offset-md-1 list-group-horizontal-md-3">
       <h2>お勧めする本の詳細</h2>
@@ -11,15 +11,15 @@
             <td><%= @book.body %></td>
             <td><%= @book.genre.name %></td>
             <td>コメント数: <%= @book.book_comments.count %></td>
-            <td>評価: <%= @book.star %></td>
             <td id="star-rate<%= @book.id %>"></td>
             <script>
               $('#star-rate<%= @book.id %>').empty();
               $('#star-rate<%= @book.id %>').raty({
-                size      : 36,
-                starOff   : '<%= asset_path('star-off.png') %>',
-                starOn    : '<%= asset_path('star-on.png') %>',
-                half      : true,
+                size: 24,
+                starOff: '<%= asset_path('star-off.png') %>',
+                starOn: '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                half: true,
                 readOnly: true,
                 score: <%= @book.star %>,
               });
