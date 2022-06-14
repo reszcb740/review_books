@@ -11,7 +11,7 @@
             <th>ジャンル</th>
             <th>本のコメント</th>
             <th>レビュー</th>
-            <th colspan="6"></th>
+            <th colspan="2"></th>
           </tr>
         </thead>
         <tbody>
@@ -22,12 +22,11 @@
              <td><%= book.body %></td>
              <td><%= book.genre.name %></td>
              <td>コメント数: <%= book.book_comments.count %></td>
-             <td>評価: <%= book.star %>点</td>
              <td id="star-rate-<%= book.id %>"></td>
              <script>
                 $('#star-rate-<%= book.id %>').empty();
                 $('#star-rate-<%= book.id %>').raty({
-                  size: 36,
+                  size: 24,
                   starOff: '<%= asset_path('star-off.png') %>',
                   starOn: '<%= asset_path('star-on.png') %>',
                   starHalf: '<%= asset_path('star-half.png') %>',

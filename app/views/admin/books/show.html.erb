@@ -17,12 +17,11 @@
         <%= render 'admin/book_comments/comment', book: @book, book_comment: @book_comment %>
       </div>
       </div>
-      <div>評価: <%= @book.star %>点</div>
       <div id="star-rate<%= @book.id %>"></div>
       <script>
         $('#star-rate<%= @book.id %>').empty();
         $('#star-rate<%= @book.id %>').raty({
-          size: 36,
+          size: 24,
           starOff: '<%= asset_path('star-off.png') %>',
           starOn: '<%= asset_path('star-on.png') %>',
           starHalf: '<%= asset_path('star-half.png') %>',

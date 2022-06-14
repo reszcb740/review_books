@@ -15,8 +15,6 @@ class Book < ApplicationRecord
     greater_than_or_equal_to: 0
   }, presence: true
 
-
-
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/sample-author1.jpg')
