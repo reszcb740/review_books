@@ -15,7 +15,7 @@
                 <% end %>
               </li>
               <li class="nav-item mr-3">
-                <%= link_to admin_books_path, class: "btn btn-sm btn-outline-secondary" do %>
+                <%= link_to admin_books_path, class: "btn btn-sm btn-outline-secondary", 'data-turbolinks': false  do %> <%# 二重読み込み防止のため %>
                  <i class="fas fa-book-open"></i>
                  本　投稿一覧
                 <% end %>
@@ -29,19 +29,19 @@
           <% elsif customer_signed_in? %>
             <li class="mx-auto"></li>
             <li class="nav-item mr-3">
-              <%= link_to customer_path(current_customer.id), class: "btn btn-sm btn-outline-secondary" do %>
+              <%= link_to customer_path(current_customer.id), class: "btn btn-sm btn-outline-secondary", 'data-turbolinks': false  do %>  <%# 二重読み込み防止のため %>
                <i class="fas fa-user"></i>
               　マイページ
               <% end %>
             </li>
             <li class="nav-item mr-3">
-              <%= link_to books_path, class: "btn btn-sm btn-outline-secondary" do %>
+              <%= link_to books_path, class: "btn btn-sm btn-outline-secondary", 'data-turbolinks': false do %> <%# 二重読み込み防止のため %>
                <i class="fas fa-book-open"></i>
                本 投稿一覧
               <% end %>
             </li>
             <li class="nav-item mr-3">
-              <%= link_to genres_path, class: "btn btn-sm btn-outline-secondary" do %>
+              <%= link_to genres_path, class: "btn btn-sm btn-outline-secondary", 'data-turbolinks': false do %>
                <i class="fas fa-book"></i>
                本のジャンル一覧
               <% end %>
