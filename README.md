@@ -21,7 +21,8 @@
 - テーブル定義書: https://docs.google.com/spreadsheets/d/1sNMGttu2XQ-QNGAVdQW4aUKgygYzjjrEq62tz05FtA8/edit#gid=1309140826
 - アプリケーション詳細設計: https://docs.google.com/spreadsheets/d/1fEESgu6kROwmmVf3Gh3tlofKzcEhfPiu5nVPjnpLblo/edit#gid=979035707
 - テスト仕様書: https://docs.google.com/spreadsheets/d/1_YmKucaw_oGWC6wW9cpV9vUC-ufLPIJo/edit#gid=2072448154
-
+- 会員側のワイヤーフレーム: https://app.diagrams.net/#G15vT1CSCQjhfnJKMrBtj4Pa7L9BEWFb8K
+- 管理者側のワイヤーフレーム: https://app.diagrams.net/#G11O5OPfmiwhrPXjwstSV1NvBiQZ6RgdVj
 
 ## 開発環境
 - OS：Linux(CentOS)
