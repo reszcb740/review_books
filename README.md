@@ -35,7 +35,7 @@
 - no_image,sample_author1などの画像
 - fontawesome
 - bootstrap
-- CopyRight Infratop.incをお借りしています
+- footerにCopyRight Infratop.incをお借りしています
 
 ## 主な役割
 - 会員側: 本の投稿・コメント・編集・削除・レビュー・ブックマークなど、また本のジャンルも追加・編集できるようにしています。
