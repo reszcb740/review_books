@@ -38,3 +38,9 @@
 
 - 管理者側: 会員一覧や会員の編集・退会情報など、会員の本の投稿を見れるようにしています。
 - resources :booksを持っていますが、管理者側は不適切なレビューを編集したり、コメントを削除することを主にしています。
+
+## review_books・関連
+- ER図: https://app.diagrams.net/#G1kSnqDRdCi48pO5Z9lXgKEV0gcq31X9mk
+- テーブル定義書: https://docs.google.com/spreadsheets/d/1sNMGttu2XQ-QNGAVdQW4aUKgygYzjjrEq62tz05FtA8/edit#gid=1309140826
+- アプリケーション詳細設計: https://docs.google.com/spreadsheets/d/1fEESgu6kROwmmVf3Gh3tlofKzcEhfPiu5nVPjnpLblo/edit#gid=979035707
+- テスト仕様書: https://docs.google.com/spreadsheets/d/1_YmKucaw_oGWC6wW9cpV9vUC-ufLPIJo/edit#gid=2072448154
