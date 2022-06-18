@@ -23,6 +23,7 @@
 - テスト仕様書: https://docs.google.com/spreadsheets/d/1_YmKucaw_oGWC6wW9cpV9vUC-ufLPIJo/edit#gid=2072448154
 - 会員側のワイヤーフレーム: https://app.diagrams.net/#G15vT1CSCQjhfnJKMrBtj4Pa7L9BEWFb8K
 - 管理者側のワイヤーフレーム: https://app.diagrams.net/#G11O5OPfmiwhrPXjwstSV1NvBiQZ6RgdVj
+- 実装機能リスト: https://docs.google.com/spreadsheets/d/13qTHq5aprU4SsRelIPIOxVt953q37ph_is-soj4ZvBk/edit#gid=1091086188
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -43,4 +44,5 @@
 
 - 管理者側: 会員一覧や会員の編集・退会情報など、会員の本の投稿を見れるようにしています。
 - resources :booksを持っていますが、管理者側は不適切なレビューを編集したり、コメントを削除することを主にしています。
+- rubocopを導入しています。
 
