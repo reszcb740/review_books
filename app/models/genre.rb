@@ -9,7 +9,7 @@ class Genre < ApplicationRecord
       where('name LIKE?', "#{word}%")
     elsif search == 'backward_match'
       where('name LIKE?', "%#{word}")
-    elsif search == 'pertial_match'
+    elsif search == 'partial_match'
       where('name LIKE?', "%#{word}%")
     else
       all
